@@ -49,9 +49,9 @@ x = setInterval(function() {
     hw = w / 2, // half-width
     hh = h / 2,
     opts = {
-      strings: ['LO ENCONTRASTE?','ESTEFANI!', config.name],
+      strings: ['LO ENCONTRASTE?','ESTEFANI xd', config.name],
       charSize: 30,
-      charSpacing: 28,
+      charSpacing: 26,
       lineHeight: 40,
       
 
