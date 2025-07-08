@@ -4,60 +4,6 @@ const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
 const specialImage = document.getElementById('hidden-image');
 
-function showImage() {
-  setTimeout(function () {
-    const hiddenImage = document.getElementById('hidden-image');
-    const imagePath = hiddenImage.src;
-
-    const img = document.createElement('img');
-    img.src = imagePath;
-    img.alt = hiddenImage.alt;
-
-    const button = document.createElement('button');
-    button.innerHTML = 'Presiona<br>la torta';
-
-    // button.disabled = true; // Desactivado inicialmente
-
-    // Función para redirigir al hacer clic en la imagen
-    img.onclick = function () {
-      window.location.href = 'cake.html'; // Redirige a la página cuando se hace clic en la imagen
-    };
-
-    button.onclick = function () {
-      if (!button.disabled) {
-        window.location.href = 'cake.html'; // Redirige a la página cuando el botón está habilitado
-      }
-    };
-
-    const container = document.getElementById('image-container');
-    if (container) {
-      container.innerHTML = ''; // Limpia contenido anterior
-      container.appendChild(img);
-      container.appendChild(button);
-
-      // Asegúrate de que el contenedor comienza con opacidad 0
-      container.style.opacity = 0;
-      container.style.transition = 'opacity 8s ease';
-
-      // Forzar un reflow para que la transición ocurra correctamente
-      void container.offsetWidth;
-      
-      // Cambiar la opacidad a 1 después del reflow
-      container.style.opacity = 1;
-
-      // Después de 8 segundos, habilitar el botón
-      setTimeout(function () {
-        button.disabled = false;
-      }, 8000); // Después de 8 segundos, habilitar el botón
-
-    } else {
-      console.error('No se encontró el contenedor con id "image-container".');
-    }
-  }, 5000); // Espera 5 segundos antes de iniciar
-}
-
-
-
 const config = {
   birthdate: 'Marz 21, 2025 00:00:',
   name: ' '
@@ -103,8 +49,8 @@ x = setInterval(function() {
     hw = w / 2, // half-width
     hh = h / 2,
     opts = {
-      strings: ['FELIZ CUMPLE','STEFANY!', config.name],
-      charSize: 30,
+      strings: ['NO LO ENCONTRARAS','ESTEFANI!', config.name],
+      charSize: 33,
       charSpacing: 28,
       lineHeight: 40,
       
@@ -618,3 +564,28 @@ x = setInterval(function() {
 // }
 
 
+
+function showImage() {
+  // Retraso de 2 segundos antes de mostrar la imagen
+  setTimeout(function() {
+    // Obtén el elemento <img> con la ruta definida
+    const hiddenImage = document.getElementById('hidden-image');
+    const imagePath = hiddenImage.src; // Obtén la ruta de la imagen desde el atributo src
+
+    // Crea una copia de la imagen y muéstrala en el contenedor
+    const img = document.createElement('img');
+    img.src = imagePath;
+    img.alt = hiddenImage.alt;
+
+    // Inserta la imagen en el contenedor
+    const container = document.getElementById('image-container');
+    if (container) {
+      container.innerHTML = ''; // Limpia cualquier contenido anterior
+      container.appendChild(img);
+      // Establece la opacidad a 1 para que la imagen aparezca suavemente
+      container.style.opacity = 1;
+    } else {
+      console.error('No se encontró el contenedor con id "image-container".');
+    }
+  }, 5000); // Retraso de 2000 ms (2 segundos)
+}
