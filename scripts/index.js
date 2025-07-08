@@ -50,7 +50,7 @@ x = setInterval(function() {
     hh = h / 2,
     opts = {
       strings: ['NO LO ENCONTRARAS','ESTEFANI!', config.name],
-      charSize: 33,
+      charSize: 30,
       charSpacing: 28,
       lineHeight: 40,
       
