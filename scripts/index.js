@@ -49,7 +49,7 @@ x = setInterval(function() {
     hw = w / 2, // half-width
     hh = h / 2,
     opts = {
-      strings: ['NO LO ENCONTRARAS','ESTEFANI!', config.name],
+      strings: ['LO ENCONTRASTE ','ESTEFANI!', config.name],
       charSize: 30,
       charSpacing: 28,
       lineHeight: 40,
